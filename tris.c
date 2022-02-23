@@ -120,9 +120,9 @@ void controllo_O()
 void giocatore1()
 {
     printf("%s [X] e' il tuo turno\n", player1);
-    printf("inserisci le ascisse x: ");
+    printf("inserisci le ascisse x (colonna): ");
     scanf("%d", &x);
-    printf("\n inserisci le ordinate y: ");
+    printf("\n inserisci le ordinate y: (riga) ");
     scanf("%d", &y);
     // coordinate errate
     if (x > 2 || y > 2 || x < 0 || y < 0)
@@ -149,9 +149,9 @@ void giocatore1()
 void giocatore2()
 {
     printf("%s [O] e' il tuo turno\n", player2);
-    printf("inserisci le ascisse x: ");
+    printf("inserisci le ascisse x (colonna):  ");
     scanf("%d", &x);
-    printf("\n inserisci le ordinate y: ");
+    printf("\ninserisci le ordinate y (riga): ");
     scanf("%d", &y);
 
     // coordinate errate
@@ -271,16 +271,19 @@ int main()
     case 1:
         azzerare();
         new_game();
+        system("pause");
         break;
     // RIVINCITA
     case 2:
         azzerare();
         rivincita();
+        system("pause");
         break;
 
     //PUNTEGGIO
     case 3:
         punteggio();
+        system("pause");
         break;
 
     // EXIT
@@ -290,6 +293,7 @@ int main()
     // default
     default:
         menu();
+        system("pause");
         break;
     }
     } while (scelta != 0);
